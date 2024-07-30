@@ -48,4 +48,4 @@ generate_call_graphs(root_dir)
 
 
 ##excel
-=CONCAT(IF(ISNUMBER(SEARCH(MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),A1)),MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),""))
+=CONCATENATE(IF(FIND(MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),A1)>0,MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),""))
