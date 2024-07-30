@@ -48,4 +48,16 @@ generate_call_graphs(root_dir)
 
 
 ##excel
-=CONCATENATE(IF(FIND(MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),A1)>0,MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),""))
+=CONCATENATE(IFERROR(IF(FIND(MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),A1)>0,MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),""),""))
+Function CompareChars(str1 As String, str2 As String) As String
+    Dim i As Integer
+    Dim result As String
+    
+    For i = 1 To Len(str2)
+        If InStr(1, str1, Mid(str2, i, 1)) > 0 Then
+            result = result & Mid(str2, i, 1)
+        End If
+    Next i
+    
+    CompareChars = result
+End Function
