@@ -44,3 +44,8 @@ def generate_call_graphs(root_directory):
 # Use the current directory as the root
 root_dir = "."
 generate_call_graphs(root_dir)
+
+
+
+##excel
+=CONCAT(IF(ISNUMBER(SEARCH(MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),A1)),MID(B1,ROW(INDIRECT("1:"&LEN(B1))),1),""))
